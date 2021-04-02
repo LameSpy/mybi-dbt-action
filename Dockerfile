@@ -15,7 +15,7 @@ RUN set -ex \
     && curl https://packages.microsoft.com/config/debian/10/prod.list > /etc/apt/sources.list.d/mssql-release.list \
     && apt-get update \
     && ACCEPT_EULA=Y apt-get install -yqq msodbcsql17 \
-    && pip install dbt-sqlserver==0.19.0.1
+    && pip install dbt-sqlserver
 
 ENV DBT_PROFILES_DIR=.
 
