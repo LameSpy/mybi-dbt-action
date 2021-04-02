@@ -20,6 +20,17 @@ RUN set -ex \
 
 ENV DBT_PROFILES_DIR=.
 
+dbt-sqlserver:
+  target: prod
+    
+    prod: 
+      type: sqlserver
+      driver: 'ODBC Driver 17 for SQL Server'
+      server: DBT_MSSQL_SERVER
+      user: DBT_MSSQL_USER
+      password: DBT_MSSQL_PASSWORD
+      database: DBT_MSSQL_DATABASE
+      schema: DBT_MSSQL_SCHEMA
 # COPY profiles.yml profiles.yml    
 
 # ENTRYPOINT ["tail", "-f", "/dev/null"]
